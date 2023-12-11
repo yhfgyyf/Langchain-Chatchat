@@ -123,6 +123,15 @@ ONLINE_LLM_MODEL = {
         "provider": "TianGongWorker",
     },
 
+    #第三方openai接口在fastchat注册，可接入框架有text-generation-webui，Llama-factory,llama.cpp的server等 
+    "textgeneration-api": {
+        "deployment_name": "chatglm3",                  #模型名称，Llama-factory的openai接口需要model参数
+        "api_base_url": "http://127.0.0.1:5000/v1",
+        "api_key": "empty",                           #llama.cpp的server，请修改为"api_key": "", 
+        "provider":"TextGenerationWorker",
+        
+    },
+
 }
 
 # 在以下字典中修改属性值，以指定本地embedding模型存储位置。支持3种设置方法：
